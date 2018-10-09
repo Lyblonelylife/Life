@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+	int d;
+	int mask;
+	
+	scanf("%d",&d);
+	
+	int s = d;
+	
+	mask = 1;
+	while( s > 9 ){
+		s /= 10;
+		mask *= 10;
+	}
+	do{
+		int x = d/mask;
+		d %= mask;
+		mask /= 10;
+		printf("%d",x);
+		if ( mask > 0 ) {
+			printf(" "); 
+		}
+		//printf("x=%d d=%d mask=%d\n",x, d, mask);
+	 } while ( mask > 0 );
+	 return 0;
+}
